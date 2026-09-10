@@ -74,3 +74,13 @@ static void StructCopyExample()
 // - Başka bir struct'tan kalıtım alamaz.
 // - Base class olarak kullanılamaz.
 // - Ancak interface uygulayabilir.
+
+// class:
+// - object'ten gelir.
+// - Başka class'lardan kalıtım alabilir.
+// - Interface uygulayabilir.
+//
+// struct:
+// - ValueType üzerinden object'ten gelir.
+// - Başka class veya struct'tan kalıtım alamaz.
+// - Interface uygulayabilir.
