@@ -23,7 +23,7 @@ static void ValueTypeExample()
 // Reference type örneği
 static void ReferenceTypeExample()
 {
-    var first = new Person { Name = "Ali" };
+    var first = new ReferencePerson { Name = "Ali" };
     var second = first;
 
     second.Name = "Veli";
@@ -34,7 +34,7 @@ static void ReferenceTypeExample()
 
 // Burada iki değişken de aynı Person nesnesini gösterir.
 // Bu yüzden birinden yapılan değişiklik diğerinden de görünür.
-public class Person
+public class ReferencePerson
 {
     public string Name { get; set; } = "";
 }
@@ -84,3 +84,71 @@ static void StructCopyExample()
 // - ValueType üzerinden object'ten gelir.
 // - Başka class veya struct'tan kalıtım alamaz.
 // - Interface uygulayabilir.
+
+// record ile değer eşitliği
+//
+// Normal sınıflarda varsayılan eşitlik çoğunlukla referans karşılaştırmasıdır:
+var person1 = new Person("Ali");
+var person2 = new Person("Ali");
+
+Console.WriteLine(person1 == person2); // False
+
+public class Person
+{
+    public Person(string name) => Name = name;
+    public string Name { get; }
+}
+
+// record ise içerik eşitliği sağlar:
+var personRecord1 = new PersonRecord("Ali");
+var personRecord2 = new PersonRecord("Ali");
+
+Console.WriteLine(personRecord1 == personRecord2); // True
+
+public record PersonRecord(string Name);
+
+// record, özellikle DTO, immutable model ve veri taşıma nesnelerinde kullanışlıdır.
+
+// record struct
+// Değer tipinin kopyalama davranışını ve record'un içerik eşitliğini birleştirir:
+public readonly record struct Money(decimal Amount, string Currency);
+
+var money1 = new Money(100, "TRY");
+var money2 = new Money(100, "TRY");
+
+Console.WriteLine(money1 == money2); // True
+
+// Önemli kural:
+// Bir türün class, struct veya record olması; performans, eşitlik,
+// mutability ve API tasarımı üzerinde doğrudan etkilidir.
+//
+// Genel yaklaşım:
+// - Küçük, basit ve mümkünse immutable değerler: readonly struct
+// - Veri modelleri ve immutable DTO'lar: record
+// - Davranış ve kimlik taşıyan nesneler: class
+// - Değer eşitliği gereken küçük nesneler: record struct
+
+// İlk alıştırma
+// Aşağıdaki kodun çıktısını tahmin et:
+var a = new Counter { Value = 5 };
+var b = a;
+
+b.Value++;
+
+Console.WriteLine(a.Value);
+Console.WriteLine(b.Value);
+
+public class Counter
+{
+    public int Value { get; set; }
+}
+
+// Product modelini record kullanarak yeniden yazma alıştırması:
+public class Product
+{
+    public string Name { get; init; } = "";
+    public decimal Price { get; init; }
+}
+
+// Record olarak yeniden yazılmış hali:
+public record ProductRecord(string Name, decimal Price);
