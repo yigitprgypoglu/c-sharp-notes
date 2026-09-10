@@ -152,3 +152,13 @@ public class Product
 
 // Record olarak yeniden yazılmış hali:
 public record ProductRecord(string Name, decimal Price);
+
+// Normal bir struct için de değer karşılaştırması vardır; ancak record struct,
+// bu davranışları daha düzenli şekilde otomatik üretir:
+// - Equals
+// - GetHashCode
+// - ==
+// - !=
+// - ToString
+//
+// readonly ise oluşturulan Money değerinin sonradan değiştirilmesini engeller.
