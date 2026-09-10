@@ -117,8 +117,8 @@ public record PersonRecord(string Name);
 
 // record struct
 // Değer tipinin kopyalama davranışını ve record'un içerik eşitliğini birleştirir:
-public readonly record struct Money(decimal Amount, string Currency);
-
+public readonly record struct Money(decimal Amount, string Currency); 
+//Bu satır, `Money` adında bir **readonly record struct** tanımlar. İçinde iki property otomatik olarak oluşturulur:
 var money1 = new Money(100, "TRY");
 var money2 = new Money(100, "TRY");
 
