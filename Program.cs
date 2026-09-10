@@ -68,3 +68,9 @@ static void StructCopyExample()
 }
 
 // struct kopyalandığı için point1 değişmez.
+
+// Bir struct:
+// - Başka bir class'tan kalıtım alamaz.
+// - Başka bir struct'tan kalıtım alamaz.
+// - Base class olarak kullanılamaz.
+// - Ancak interface uygulayabilir.
