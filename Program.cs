@@ -38,3 +38,33 @@ public class Person
 {
     public string Name { get; set; } = "";
 }
+
+// struct ve class farkı
+public struct Point
+{
+    public int X { get; set; }
+    public int Y { get; set; }
+}
+
+public class Coordinate
+{
+    public int X { get; set; }
+    public int Y { get; set; }
+}
+
+// struct genellikle küçük ve değişmez değerleri temsil etmek için kullanılır.
+// class kimliği olan, daha karmaşık veya yaşam süresi yönetilen nesneler için kullanılır.
+
+// struct kopyalama örneği
+static void StructCopyExample()
+{
+    var point1 = new Point { X = 1, Y = 2 };
+    var point2 = point1;
+
+    point2.X = 99;
+
+    Console.WriteLine(point1.X); // 1
+    Console.WriteLine(point2.X); // 99
+}
+
+// struct kopyalandığı için point1 değişmez.
