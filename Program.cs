@@ -95,7 +95,13 @@ Console.WriteLine(person1 == person2); // False
 
 public class Person
 {
-    public Person(string name) => Name = name;
+    public Person(string name) => Name = name; //constructor
+    /*
+    public Person(string name)
+    {
+        Name = name;  -> constructorun kisaltilmamis hali.  
+    }
+    */
     public string Name { get; }
 }
 
