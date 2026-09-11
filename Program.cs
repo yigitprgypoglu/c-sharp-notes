@@ -109,9 +109,21 @@ public class Person
 var personRecord1 = new PersonRecord("Ali");
 var personRecord2 = new PersonRecord("Ali");
 
-Console.WriteLine(personRecord1 == personRecord2); // True
+Console.WriteLine(personRecord1 == personRecord2); // True : `record`, varsayılan olarak nesnelerin referanslarını değil, içerdikleri değerleri karşılaştırır
 
-public record PersonRecord(string Name);
+public record PersonRecord(string Name);//bu kisaltilmis hali
+/*
+-> kisaltilmamis hali
+public record PersonRecord
+{
+    public string Name { get; init; }
+
+    public PersonRecord(string name)
+    {
+        Name = name; 
+    }
+}
+*/
 
 // record, özellikle DTO, immutable model ve veri taşıma nesnelerinde kullanışlıdır.
 
