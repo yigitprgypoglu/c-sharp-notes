@@ -3,4 +3,4 @@ new c# notes
 
 ## C# Tip Sistemi
 
-Detaylı notlar ve örnekler için [Program.cs](Program.cs) dosyasına bakabilirsiniz.
+Detaylı notlar ve örnekler için [notes_1.cs](notes_1.cs) dosyasına bakabilirsiniz.
