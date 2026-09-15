@@ -95,7 +95,13 @@ Console.WriteLine(person1 == person2); // False
 
 public class Person
 {
-    public Person(string name) => Name = name;
+    public Person(string name) => Name = name; //constructor
+    /*
+    public Person(string name)
+    {
+        Name = name;  -> constructorun kisaltilmamis hali.  
+    }
+    */
     public string Name { get; }
 }
 
@@ -103,16 +109,28 @@ public class Person
 var personRecord1 = new PersonRecord("Ali");
 var personRecord2 = new PersonRecord("Ali");
 
-Console.WriteLine(personRecord1 == personRecord2); // True
+Console.WriteLine(personRecord1 == personRecord2); // True : `record`, varsayılan olarak nesnelerin referanslarını değil, içerdikleri değerleri karşılaştırır
 
-public record PersonRecord(string Name);
+public record PersonRecord(string Name);//bu kisaltilmis hali
+/*
+-> kisaltilmamis hali
+public record PersonRecord
+{
+    public string Name { get; init; }
+
+    public PersonRecord(string name)
+    {
+        Name = name; 
+    }
+}
+*/
 
 // record, özellikle DTO, immutable model ve veri taşıma nesnelerinde kullanışlıdır.
 
 // record struct
 // Değer tipinin kopyalama davranışını ve record'un içerik eşitliğini birleştirir:
-public readonly record struct Money(decimal Amount, string Currency);
-
+public readonly record struct Money(decimal Amount, string Currency); 
+//Bu satır, `Money` adında bir **readonly record struct** tanımlar. İçinde iki property otomatik olarak oluşturulur:
 var money1 = new Money(100, "TRY");
 var money2 = new Money(100, "TRY");
 
