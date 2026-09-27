@@ -65,3 +65,16 @@ var circle = new Circle { Radius = 5 };
 
 Console.WriteLine(circle.Area());
 ```
+interface hem struct hem de class icin kullanilabilir.
+interfacein icine yazdigimiz fonksiyon bir sozlesme olur ve interface i kullanicak class ya da struct in bu metoduda icinde bulundurmasi gerekir.
+istersek interface fonksiyonunu tek tek cagirabilir yada interface imizin adini girip yani mesela alttaki ornekten yola cikarak :
+
+C#
+```
+Iprey prey = new Rabbit(); prey.Flee();
+```
+boyle yazdigimizda bu flee fonksiyonunu icinde bulunduran butun class yada structlarimiz calisir.
+C#
+```
+
+```
