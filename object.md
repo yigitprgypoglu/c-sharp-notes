@@ -1,3 +1,4 @@
+## object kullanım alanları
 ## 1. Her türü kabul eden metotlar
 
 
