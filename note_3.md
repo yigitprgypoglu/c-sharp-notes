@@ -450,9 +450,9 @@ public class OrderService
 }
 
 ```
+EventHandler: .NET ile hazır gelen standart bir delegedir (delegate). Tanımı gereği iki parametre taşır: (object sender, EventArgs e). 
 
-
-
+? (Nullable): Bu olaya henüz kimse abone olmamış olabilir (yani içi null olabilir) uyarısını susturur ve güvenli hale getirir.
 
 
 Event’e metot bağlayalım:
