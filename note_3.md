@@ -398,12 +398,14 @@ foreach (var number in evenNumbers)
 
 ```
 
-Where(...): C#'ın hazır filtreleme metodudur. Tanımına baktığında içine parametre olarak tam olarak az önce öğrendiğin şeyi alır:
+.Where(...): C#'ın hazır filtreleme metodudur. Tanımına baktığında içine parametre olarak tam olarak az önce öğrendiğin şeyi alır:
+
 C#
 ```
 Func<int, bool> predicate
 
 ```
+Yani .Where(), "Bana her bir eleman için true ya da false dönecek bir kural ver" der.
 
 
 ## 4. Event nedir?
