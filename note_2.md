@@ -347,3 +347,69 @@ static bool TryDivide(
     return true;
 }
 ```
+
+## Üç yöntemin karşılaştırması
+
+### Normal parametre
+
+```csharp
+static void Method(Point point)
+```
+
+- `Point` kopyalanır.
+- Okunabilir.
+- Kopya üzerinde değişiklik yapılabilir.
+- Dışarıdaki `Point` değişmez.
+
+### `ref`
+
+```csharp
+static void Method(ref Point point)
+```
+
+- Kopya oluşturulmaz.
+- Orijinal değer kullanılır.
+- Okunabilir ve değiştirilebilir.
+
+Örnek:
+
+```csharp
+static void ChangePoint(ref Point point)
+{
+    point.X = 99;
+}
+
+var point = new Point { X = 10, Y = 20 };
+
+ChangePoint(ref point);
+
+Console.WriteLine(point.X); // 99
+```
+
+`ref` kullanırken çağrıda da `ref` yazılır:
+
+```csharp
+ChangePoint(ref point);
+```
+
+### `in`
+
+```csharp
+static void Method(in Point point)
+```
+
+- Kopya oluşturulmadan orijinal değer okunur.
+- Okunabilir.
+- Değiştirilemez.
+
+Çağırırken genellikle şöyle yazılır:
+
+```csharp
+Method(point);
+```
+
+İstersen açıkça da yazabilirsin:
+
+```csharp
+Method(in point);
+```
