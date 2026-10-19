@@ -306,6 +306,8 @@ public readonly record struct Point(int X, int Y);
 | `out` | Metottan değer döndürmek | Evet | Hayır |
 | `in` | Kopyalamadan salt okunur göndermek | Hayır | Evet |
 
+
+
 ## Mini alıştırma
 
 Aşağıdaki kodun çıktısı ne olur?

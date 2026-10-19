@@ -66,7 +66,7 @@ kullanılır.
 var point1 = new Point { X = 1, Y = 2 };
 var point2 = point1;
 
-point2.X = 99;
+point2.X = 99; //Bu işlem yalnızca point2 değerinin X özelliğini değiştirir:
 
 Console.WriteLine(point1.X); // 1
 Console.WriteLine(point2.X); // 99
