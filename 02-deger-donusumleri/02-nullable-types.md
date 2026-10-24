@@ -1,4 +1,4 @@
-# Bölüm 3 — Nullable Value Types ve Nullable Reference Types
+# Bölüm 2.2 — Nullable Value Types ve Nullable Reference Types
 
 ## Null değerlerle güvenli çalışma
 
