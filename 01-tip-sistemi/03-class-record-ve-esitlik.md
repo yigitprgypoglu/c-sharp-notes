@@ -1,4 +1,4 @@
-# Bölüm 3 — `class`, `record` ve Değer Eşitliği
+# Bölüm 1.3 — `class`, `record` ve Değer Eşitliği
 
 ## Nesneleri karşılaştırma
 
