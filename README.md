@@ -6,7 +6,7 @@ new c# notes
 ## İleri Seviye C# Öğrenme Programı
 
 
-[note_1.md](note_1.md)
+[01-tip-sistemi/README.md](01-tip-sistemi/README.md)
 1. **Modern C# temelleri ve tip sistemi**
 
 
