@@ -10,7 +10,7 @@
 **Hedef:** Bir değerin kopyalanması ile bir nesneye referans kopyalanması
 arasındaki farkı anlayabilmek.
 
-# Bölüm 1: C# Tip Sistemi
+# Bölüm 1.1: C# Tip Sistemi
 
 C#'ta değişkenler temel olarak iki kategoriye ayrılır:
 
