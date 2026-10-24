@@ -1,4 +1,4 @@
-# Bölüm 2 — `struct` ve `class` Arasındaki Farklar
+# Bölüm 1.2 — `struct` ve `class` Arasındaki Farklar
 
 ## Bellek davranışı ve tür tasarımı
 
