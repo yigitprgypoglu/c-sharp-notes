@@ -47,7 +47,7 @@ new c# notes
 
 - Expression tree ve reflection
 
-[note_4.md](note_4.md)
+[04-ileri-linq/README.md](04-ileri-linq/README.md)
 4. **LINQ’in ileri kullanımı**
 
 
