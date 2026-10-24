@@ -1,4 +1,4 @@
-# Bölüm 4 — Parametre Aktarımı ve `ref`
+# Bölüm 2.3 — Parametre Aktarımı ve `ref`
 
 ## Metotların değişkenler üzerindeki etkisi
 
