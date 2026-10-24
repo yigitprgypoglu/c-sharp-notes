@@ -34,7 +34,7 @@ new c# notes
 
 - Generic tasarım kalıpları
 
-[note_3.md](note_3.md)
+[03-delegate-event-expression/README.md](03-delegate-event-expression/README.md)
 3. **Delegate, event ve expression**
 
 [events](winforms-events.md)
