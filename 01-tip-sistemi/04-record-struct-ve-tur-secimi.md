@@ -1,4 +1,4 @@
-# Bölüm 4 — `record struct` ve Doğru Tür Seçimi
+# Bölüm 1.4 — `record struct` ve Doğru Tür Seçimi
 
 ## Pratik tasarım kararları
 
