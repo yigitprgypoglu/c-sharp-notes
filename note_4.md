@@ -7,14 +7,7 @@ LINQ, koleksiyonlar üzerinde filtreleme, dönüştürme, sıralama, gruplama ve
 LINQ’in temel amacı şudur:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 Koleksiyondaki veriyi nasıl işleyeceğimizi daha okunabilir ve zincirlenebilir şekilde yazmak.
 
 ```
@@ -26,14 +19,7 @@ Koleksiyondaki veriyi nasıl işleyeceğimizi daha okunabilir ve zincirlenebilir
 Örnek veri:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new[] { 1, 2, 3, 4, 5, 6 };
 
 ```
@@ -49,14 +35,7 @@ var numbers = new[] { 1, 2, 3, 4, 5, 6 };
 `IEnumerable<T>`, bir koleksiyon üzerinde sırayla dolaşabilmeyi ifade eder.
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 IEnumerable<int> numbers = new[] { 1, 2, 3, 4, 5 };
 
 ```
@@ -68,14 +47,7 @@ IEnumerable<int> numbers = new[] { 1, 2, 3, 4, 5 };
 Bu yapı `foreach` ile kullanılabilir:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 foreach (var number in numbers)
 {
     Console.WriteLine(number);
@@ -90,14 +62,7 @@ foreach (var number in numbers)
 Birçok koleksiyon `IEnumerable<T>` olarak kullanılabilir:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var list = new List<int> { 1, 2, 3 };
 var array = new[] { 4, 5, 6 };
 
@@ -113,14 +78,7 @@ IEnumerable<int> arrayNumbers = array;
 LINQ metotlarının çoğu `IEnumerable<T>` üzerinde çalışır:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var evenNumbers = numbers.Where(number => number % 2 == 0);
 
 ```
@@ -139,14 +97,7 @@ Burada `Where` sonucu genellikle yine `IEnumerable<int>` olur.
 `Where`, belirli koşulu sağlayan elemanları seçer.
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new[] { 1, 2, 3, 4, 5, 6 };
 
 var evenNumbers = numbers.Where(number => number % 2 == 0);
@@ -160,14 +111,7 @@ var evenNumbers = numbers.Where(number => number % 2 == 0);
 Sonuç:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 2, 4, 6
 
 ```
@@ -179,14 +123,7 @@ Plain text
 `Where` bir `Func<T, bool>` alır:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 Func<int, bool> condition = number => number % 2 == 0;
 
 var evenNumbers = numbers.Where(condition);
@@ -200,14 +137,7 @@ var evenNumbers = numbers.Where(condition);
 Şu iki kullanım aynıdır:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var result = numbers.Where(number => number > 3);
 
 ```
@@ -216,14 +146,7 @@ var result = numbers.Where(number => number > 3);
 
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var result = numbers.Where(IsGreaterThanThree);
 
 static bool IsGreaterThanThree(int number)
@@ -240,14 +163,7 @@ static bool IsGreaterThanThree(int number)
 Birden fazla koşul yazabiliriz:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var result = numbers.Where(number =>
     number > 2 && number % 2 == 0);
 
@@ -260,14 +176,7 @@ var result = numbers.Where(number =>
 Sonuç:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 4, 6
 
 ```
@@ -283,14 +192,7 @@ Plain text
 `Select`, her elemanı başka bir değere dönüştürür.
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new[] { 1, 2, 3, 4 };
 
 var doubledNumbers = numbers.Select(number => number * 2);
@@ -304,14 +206,7 @@ var doubledNumbers = numbers.Select(number => number * 2);
 Sonuç:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 2, 4, 6, 8
 
 ```
@@ -326,14 +221,7 @@ Burada koleksiyonun eleman sayısı değişmez; sadece elemanların biçimi veya
 Örneğin sayıları metne dönüştürebiliriz:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var texts = numbers.Select(number => $"Sayı: {number}");
 
 ```
@@ -345,14 +233,7 @@ var texts = numbers.Select(number => $"Sayı: {number}");
 Sonuç:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 Sayı: 1
 Sayı: 2
 Sayı: 3
@@ -367,14 +248,7 @@ Sayı: 4
 Bir nesnenin belirli property’sini seçmek de mümkündür:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var products = new[]
 {
     new Product("Laptop", 30000),
@@ -404,14 +278,7 @@ public record Product(string Name, decimal Price);
 LINQ metotları zincirlenebilir:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var result = numbers
     .Where(number => number > 2)
     .Select(number => number * 10);
@@ -428,14 +295,7 @@ Adım adım:
 Başlangıç:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 1, 2, 3, 4, 5, 6
 
 ```
@@ -447,14 +307,7 @@ Plain text
 `Where` sonrası:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 3, 4, 5, 6
 
 ```
@@ -466,14 +319,7 @@ Plain text
 `Select` sonrası:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 30, 40, 50, 60
 
 ```
@@ -485,14 +331,7 @@ Plain text
 Genellikle önce filtrelemek, sonra dönüştürmek daha verimlidir:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var result = products
     .Where(product => product.Price > 1000)
     .Select(product => product.Name);
@@ -513,14 +352,7 @@ Böylece yalnızca gerekli ürünler dönüştürülür.
 Sıralama için kullanılır.
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new[] { 5, 1, 8, 3, 2 };
 
 var ascending = numbers.OrderBy(number => number);
@@ -534,14 +366,7 @@ var ascending = numbers.OrderBy(number => number);
 Sonuç:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 1, 2, 3, 5, 8
 
 ```
@@ -553,14 +378,7 @@ Plain text
 Büyükten küçüğe:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var descending = numbers.OrderByDescending(number => number);
 
 ```
@@ -572,14 +390,7 @@ var descending = numbers.OrderByDescending(number => number);
 Sonuç:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 8, 5, 3, 2, 1
 
 ```
@@ -591,14 +402,7 @@ Plain text
 Nesneleri property’ye göre sıralayabiliriz:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var sortedProducts = products
     .OrderBy(product => product.Price);
 
@@ -611,14 +415,7 @@ var sortedProducts = products
 Fiyatı büyükten küçüğe:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var sortedProducts = products
     .OrderByDescending(product => product.Price);
 
@@ -635,14 +432,7 @@ var sortedProducts = products
 İlk sıralama kriteri eşit olduğunda ikinci kriteri kullanır.
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var employees = new[]
 {
     new Employee("Ali", "IT", 30),
@@ -664,14 +454,7 @@ var result = employees
 Önce departmana göre sıralar. Aynı departmandaki çalışanları da yaşa göre sıralar.
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 public record Employee(string Name, string Department, int Age);
 
 ```
@@ -690,14 +473,7 @@ public record Employee(string Name, string Department, int Age);
 LINQ’in en önemli özelliklerinden biri sorgunun hemen çalıştırılmamasıdır.
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new List<int> { 1, 2, 3 };
 
 var query = numbers.Where(number => number > 1);
@@ -718,14 +494,7 @@ foreach (var number in query)
 Çıktı:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 2
 3
 4
@@ -742,14 +511,7 @@ Neden? Çünkü `Where` sorgusu oluşturulduğu anda değil, `foreach` başladı
 Akış:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 1. query oluşturulur.
 2. Henüz filtreleme yapılmaz.
 3. Listeye 4 eklenir.
@@ -769,14 +531,7 @@ Bu davranışa **deferred execution**, yani ertelenmiş çalıştırma denir.
 ## 8. Deferred execution örneği
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new List<int> { 1, 2, 3 };
 
 var query = numbers.Where(number =>
@@ -801,14 +556,7 @@ foreach (var number in query)
 Muhtemel çıktı:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 Sorgu oluşturuldu.
 Kontrol ediliyor: 1
 Kontrol ediliyor: 2
@@ -832,14 +580,7 @@ Sonuç: 3
 Sorguyu o anda çalıştırıp sonucu sabitlemek için `ToList()` veya `ToArray()` kullanılır:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new List<int> { 1, 2, 3 };
 
 var query = numbers
@@ -862,14 +603,7 @@ foreach (var number in query)
 Çıktı:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 2
 3
 
@@ -885,14 +619,7 @@ Plain text
 Karşılaştırma:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var deferredQuery = numbers.Where(number => number > 1);
 
 ```
@@ -904,14 +631,7 @@ var deferredQuery = numbers.Where(number => number > 1);
 Sorgu ertelenir.
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var immediateQuery = numbers
     .Where(number => number > 1)
     .ToList();
@@ -932,14 +652,7 @@ Sorgu hemen çalışır.
 Kendi ertelenmiş çalışan iterator metodumuzu yazabiliriz:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 static IEnumerable<int> GetEvenNumbers(IEnumerable<int> numbers)
 {
     foreach (var number in numbers)
@@ -960,14 +673,7 @@ static IEnumerable<int> GetEvenNumbers(IEnumerable<int> numbers)
 Kullanımı:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new[] { 1, 2, 3, 4, 5, 6 };
 
 var evenNumbers = GetEvenNumbers(numbers);
@@ -986,14 +692,7 @@ foreach (var number in evenNumbers)
 Çıktı:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 2
 4
 6
@@ -1021,14 +720,7 @@ Plain text
 Bu kod:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 yield return number;
 
 ```
@@ -1049,14 +741,7 @@ Bu elemanı şimdi döndür, daha sonra kaldığın yerden devam et.
 Liste oluşturan metot:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 static List<int> GetEvenNumbers(List<int> numbers)
 {
     var result = new List<int>();
@@ -1084,14 +769,7 @@ Bu metot bütün sonuçları bellekte tutar.
 `yield return` kullanan metot:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 static IEnumerable<int> GetEvenNumbers(IEnumerable<int> numbers)
 {
     foreach (var number in numbers)
@@ -1122,14 +800,7 @@ Büyük koleksiyonlarda `yield return` faydalı olabilir.
 İlk elemanı almak için kullanılır:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new[] { 10, 20, 30 };
 
 int first = numbers.First();
@@ -1145,14 +816,7 @@ Console.WriteLine(first); // 10
 Koşullu kullanım:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 int firstEven = numbers.First(number => number % 2 == 0);
 
 ```
@@ -1164,14 +828,7 @@ int firstEven = numbers.First(number => number % 2 == 0);
 Eğer hiç eleman yoksa `First()` exception fırlatır:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = Array.Empty<int>();
 
 int first = numbers.First(); // InvalidOperationException
@@ -1185,14 +842,7 @@ int first = numbers.First(); // InvalidOperationException
 `FirstOrDefault()` eleman yoksa varsayılan değer döndürür:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 int first = numbers.FirstOrDefault();
 
 Console.WriteLine(first); // 0
@@ -1206,14 +856,7 @@ Console.WriteLine(first); // 0
 Reference type için varsayılan değer `null` olabilir:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 Product? product = products.FirstOrDefault(
     product => product.Price > 100000);
 
@@ -1230,14 +873,7 @@ Product? product = products.FirstOrDefault(
 Tam olarak bir eleman beklediğimiz zaman kullanılır:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var users = new[]
 {
     new User(1, "Ali"),
@@ -1262,14 +898,7 @@ var user = users.Single(user => user.Id == 1);
 
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var result = users.Single(user => user.Id == 99);
 // Hiç eleman yok: hata
 
@@ -1279,14 +908,7 @@ var result = users.Single(user => user.Id == 99);
 
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var duplicateUsers = new[]
 {
     new User(1, "Ali"),
@@ -1308,14 +930,7 @@ var result = duplicateUsers.Single(user => user.Id == 1);
 Kullanım farkı:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 First      -> İlk elemanı alır, birden fazla olabilir.
 Single     -> Tam olarak bir eleman bekler.
 
@@ -1332,14 +947,7 @@ Single     -> Tam olarak bir eleman bekler.
 Koleksiyonda en az bir eleman olup olmadığını kontrol eder:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new[] { 1, 2, 3 };
 
 bool hasNumbers = numbers.Any();
@@ -1355,14 +963,7 @@ Console.WriteLine(hasNumbers); // True
 Koşullu kullanım:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 bool hasEvenNumber = numbers.Any(number => number % 2 == 0);
 
 ```
@@ -1374,14 +975,7 @@ bool hasEvenNumber = numbers.Any(number => number % 2 == 0);
 `Any`, sonuç bulduğu anda durabilir:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var hasExpensiveProduct =
     products.Any(product => product.Price > 10000);
 
@@ -1394,14 +988,7 @@ var hasExpensiveProduct =
 Bu, genellikle şu kullanımdan daha uygundur:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 products.Count(product => product.Price > 10000) > 0
 
 ```
@@ -1420,14 +1007,7 @@ products.Count(product => product.Price > 10000) > 0
 Bütün elemanların koşulu sağlayıp sağlamadığını kontrol eder:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new[] { 2, 4, 6, 8 };
 
 bool allEven = numbers.All(number => number % 2 == 0);
@@ -1443,14 +1023,7 @@ Console.WriteLine(allEven); // True
 Bir eleman bile koşulu sağlamazsa sonuç `False` olur:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new[] { 2, 4, 5, 8 };
 
 bool allEven = numbers.All(number => number % 2 == 0);
@@ -1470,14 +1043,7 @@ Console.WriteLine(allEven); // False
 Eleman sayısını bulur:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new[] { 1, 2, 3, 4, 5 };
 
 int count = numbers.Count();
@@ -1491,14 +1057,7 @@ int count = numbers.Count();
 Koşullu sayım:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 int evenCount = numbers.Count(number => number % 2 == 0);
 
 ```
@@ -1510,14 +1069,7 @@ int evenCount = numbers.Count(number => number % 2 == 0);
 Sonuç:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 2
 
 ```
@@ -1529,14 +1081,7 @@ Plain text
 Çok büyük koleksiyonlarda `LongCount()` kullanılabilir:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 long count = numbers.LongCount();
 
 ```
@@ -1552,14 +1097,7 @@ long count = numbers.LongCount();
 Sayısal işlemler:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new[] { 10, 20, 30 };
 
 int sum = numbers.Sum();       // 60
@@ -1576,14 +1114,7 @@ double average = numbers.Average(); // 20
 Nesnelerin property’leriyle de kullanılabilir:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 decimal totalPrice = products.Sum(product => product.Price);
 decimal highestPrice = products.Max(product => product.Price);
 decimal lowestPrice = products.Min(product => product.Price);
@@ -1604,14 +1135,7 @@ decimal lowestPrice = products.Min(product => product.Price);
 Tekrarlanan değerleri kaldırır:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new[] { 1, 2, 2, 3, 3, 3 };
 
 var distinctNumbers = numbers.Distinct();
@@ -1630,14 +1154,7 @@ foreach (var number in distinctNumbers)
 Çıktı:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 1
 2
 3
@@ -1651,14 +1168,7 @@ Plain text
 String değerlerde:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var departments = new[]
 {
     "IT",
@@ -1683,14 +1193,7 @@ var uniqueDepartments = departments.Distinct();
 İç içe koleksiyonları tek koleksiyona dönüştürür.
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var classes = new[]
 {
     new[] { "Ali", "Ayşe" },
@@ -1708,14 +1211,7 @@ var students = classes.SelectMany(classroom => classroom);
 Sonuç:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 Ali
 Ayşe
 Mehmet
@@ -1730,14 +1226,7 @@ Zeynep
 `Select` kullansaydık iç içe koleksiyon elde ederdik:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var nested = classes.Select(classroom => classroom);
 
 ```
@@ -1752,14 +1241,7 @@ var nested = classes.Select(classroom => classroom);
 Gerçek örnek:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 public record Order(int Id, List<string> Products);
 
 var orders = new[]
@@ -1780,14 +1262,7 @@ var allProducts = orders
 Sonuç:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 Mouse
 Keyboard
 Monitor
@@ -1805,14 +1280,7 @@ Monitor
 Elemanları belirli bir anahtara göre gruplar:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var employees = new[]
 {
     new Employee("Ali", "IT"),
@@ -1844,14 +1312,7 @@ public record Employee(string Name, string Department);
 Çıktı:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 IT
 - Ali
 - Ayşe
@@ -1868,14 +1329,7 @@ HR
 `group.Key`, grubun anahtarıdır:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 group.Key
 
 ```
@@ -1890,14 +1344,7 @@ Bu örnekte anahtar departmandır.
 Grupları sayabiliriz:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var employeeCounts = employees
     .GroupBy(employee => employee.Department)
     .Select(group => new
@@ -1919,14 +1366,7 @@ var employeeCounts = employees
 İki koleksiyonu ortak property üzerinden birleştirir.
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var customers = new[]
 {
     new Customer(1, "Ali"),
@@ -1959,14 +1399,7 @@ var result = customers.Join(
 Modeller:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 public record Customer(int Id, string Name);
 
 public record Order(int Id, int CustomerId, decimal Total);
@@ -1980,14 +1413,7 @@ public record Order(int Id, int CustomerId, decimal Total);
 `Join` parametreleri:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 1. İlk koleksiyon
 2. İkinci koleksiyon
 3. İlk koleksiyonun anahtarı
@@ -2010,14 +1436,7 @@ LINQ iki farklı biçimde yazılabilir.
 ### Method syntax
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var result = numbers
     .Where(number => number > 2)
     .Select(number => number * 2);
@@ -2031,14 +1450,7 @@ var result = numbers
 ### Query syntax
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var result =
     from number in numbers
     where number > 2
@@ -2056,14 +1468,7 @@ var result =
 Modern C# kodlarında method syntax daha yaygın görülür:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var result = numbers
     .Where(number => number > 2)
     .Select(number => number * 2);
@@ -2087,14 +1492,7 @@ Query syntax özellikle `join` ve karmaşık sorgularda okunabilir olabilir.
 Veri genellikle bellektedir:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 IEnumerable<int> numbers = new[] { 1, 2, 3, 4 };
 
 ```
@@ -2106,14 +1504,7 @@ IEnumerable<int> numbers = new[] { 1, 2, 3, 4 };
 LINQ işlemleri .NET uygulaması içinde çalışır.
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var result = numbers.Where(number => number > 2);
 
 ```
@@ -2137,14 +1528,7 @@ Veri genellikle dış bir kaynaktadır:
 
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 IQueryable<Product> products = dbContext.Products;
 
 var result = products
@@ -2159,14 +1543,7 @@ var result = products
 Entity Framework gibi araçlar expression ağacını SQL’e çevirebilir:
 
 
-SQL
-
-
-
-
-
-
-```
+```sql
 WHERE Price > 1000
 
 ```
@@ -2178,14 +1555,7 @@ WHERE Price > 1000
 Temel fark:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 IEnumerable  -> Sorgu uygulama içinde çalışır.
 IQueryable   -> Sorgu veri kaynağına çevrilebilir.
 
@@ -2198,14 +1568,7 @@ IQueryable   -> Sorgu veri kaynağına çevrilebilir.
 `IQueryable<T>` için kullanılan lambda genellikle şudur:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 Expression<Func<Product, bool>>
 
 ```
@@ -2217,14 +1580,7 @@ Expression<Func<Product, bool>>
 `IEnumerable<T>` için ise:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 Func<Product, bool>
 
 ```
@@ -2243,14 +1599,7 @@ kullanılır.
 Şu kod:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var products = dbContext.Products
     .Where(product => product.Price > 1000)
     .ToList();
@@ -2267,14 +1616,7 @@ var products = dbContext.Products
 Fakat:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var products = dbContext.Products
     .ToList()
     .Where(product => product.Price > 1000);
@@ -2291,14 +1633,7 @@ var products = dbContext.Products
 Genellikle daha iyi olan:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var products = dbContext.Products
     .Where(product => product.Price > 1000)
     .ToList();
@@ -2319,14 +1654,7 @@ var products = dbContext.Products
 Şu metotlar genellikle sorguyu hemen çalıştırır:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 ToList()
 ToArray()
 First()
@@ -2350,14 +1678,7 @@ Average()
 Şu metotlar ise çoğunlukla ertelenmiş sorgu üretir:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 Where()
 Select()
 OrderBy()
@@ -2384,14 +1705,7 @@ SelectMany()
 Sayfalama için kullanılır:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = Enumerable.Range(1, 10);
 
 var page = numbers
@@ -2407,14 +1721,7 @@ var page = numbers
 Başlangıç:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
 ```
@@ -2426,14 +1733,7 @@ Plain text
 `Skip(3)` sonrası:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 4, 5, 6, 7, 8, 9, 10
 
 ```
@@ -2445,14 +1745,7 @@ Plain text
 `Take(4)` sonrası:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 4, 5, 6, 7
 
 ```
@@ -2464,14 +1757,7 @@ Plain text
 Sayfalama örneği:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 int pageNumber = 2;
 int pageSize = 10;
 
@@ -2490,14 +1776,7 @@ var page = products
 ## 27. LINQ sorgu zinciri nasıl okunur?
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var result = products
     .Where(product => product.Price > 1000)
     .OrderByDescending(product => product.Price)
@@ -2518,14 +1797,7 @@ var result = products
 Adım adım:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 1. Fiyatı 1000’den büyük ürünleri seç.
 2. Pahalıdan ucuza sırala.
 3. Sadece Name ve Price bilgilerini seç.
@@ -2548,14 +1820,7 @@ Bu, LINQ’in en yaygın kullanım biçimlerinden biridir.
 ### Gereksiz `ToList`
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var result = numbers
     .Where(number => number > 2)
     .ToList()
@@ -2571,14 +1836,7 @@ var result = numbers
 Çoğu durumda ara `ToList()` gereksizdir:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var result = numbers
     .Where(number => number > 2)
     .Select(number => number * 2)
@@ -2593,14 +1851,7 @@ var result = numbers
 ### `Count() > 0` yerine `Any()`
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 if (numbers.Count() > 0)
 {
 }
@@ -2614,14 +1865,7 @@ if (numbers.Count() > 0)
 Daha uygun:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 if (numbers.Any())
 {
 }
@@ -2635,14 +1879,7 @@ if (numbers.Any())
 Koşullu kontrol için:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 if (numbers.Any(number => number > 100))
 {
 }
@@ -2656,14 +1893,7 @@ if (numbers.Any(number => number > 100))
 ### `First()` ile boş koleksiyon
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var first = numbers.First();
 
 ```
@@ -2675,14 +1905,7 @@ var first = numbers.First();
 Koleksiyon boş olabilir:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var first = numbers.FirstOrDefault();
 
 ```
@@ -2697,14 +1920,7 @@ Ancak `FirstOrDefault()` için de `null` veya varsayılan değer ihtimali dikkat
 ### Sorguyu birden fazla kez çalıştırmak
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var query = numbers.Where(number => number > 2);
 
 foreach (var number in query)
@@ -2724,14 +1940,7 @@ foreach (var number in query)
 Deferred execution nedeniyle filtreleme iki kez yapılabilir. Sonuç tekrar kullanılacaksa:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var result = numbers
     .Where(number => number > 2)
     .ToList();
@@ -2749,14 +1958,7 @@ var result = numbers
 LINQ metotları extension method olarak tanımlanır.
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 public static class EnumerableExtensions
 {
     public static IEnumerable<int> WherePositive(
@@ -2781,14 +1983,7 @@ public static class EnumerableExtensions
 Kullanımı:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var numbers = new[] { -2, 0, 1, 3, -5 };
 
 var positiveNumbers = numbers.WherePositive();
@@ -2807,14 +2002,7 @@ foreach (var number in positiveNumbers)
 Çıktı:
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 1
 3
 
@@ -2827,14 +2015,7 @@ Plain text
 Buradaki:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 this IEnumerable<int> numbers
 
 ```
@@ -2853,14 +2034,7 @@ ilk parametrenin extension method üzerinde çağrılacağını gösterir.
 Daha genel bir filtre yazabiliriz:
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 public static class EnumerableExtensions
 {
     public static IEnumerable<T> WhereNotNull<T>(
@@ -2893,14 +2067,7 @@ Bu tarz generic extension metotlar, LINQ’in nasıl çalıştığını anlamak 
 ## Filtreleme
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 Where()
 
 ```
@@ -2915,14 +2082,7 @@ Koşulu sağlayan elemanları seçer.
 ## Dönüştürme
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 Select()
 
 ```
@@ -2937,14 +2097,7 @@ Elemanları başka bir biçime dönüştürür.
 ## Sıralama
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 OrderBy()
 OrderByDescending()
 ThenBy()
@@ -2959,14 +2112,7 @@ ThenByDescending()
 ## Gruplama ve düzleştirme
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 GroupBy()
 SelectMany()
 
@@ -2979,14 +2125,7 @@ SelectMany()
 ## Eleman seçme
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 First()
 FirstOrDefault()
 Single()
@@ -3001,14 +2140,7 @@ SingleOrDefault()
 ## Kontrol
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 Any()
 All()
 
@@ -3021,14 +2153,7 @@ All()
 ## Hesaplama
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 Count()
 Sum()
 Min()
@@ -3044,14 +2169,7 @@ Average()
 ## Sayfalama
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 Skip()
 Take()
 
@@ -3064,14 +2182,7 @@ Take()
 ## Çalıştırma davranışı
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 Where, Select gibi metotlar genellikle ertelenmiş çalışır.
 ToList, ToArray, Count, Any gibi metotlar sorguyu çalıştırır.
 
@@ -3084,14 +2195,7 @@ ToList, ToArray, Count, Any gibi metotlar sorguyu çalıştırır.
 ## Arayüz farkı
 
 
-Plain text
-
-
-
-
-
-
-```
+```text
 IEnumerable<T> -> Bellekteki veriler üzerinde LINQ
 IQueryable<T>  -> Sorgu sağlayıcısına çevrilebilen LINQ
 
@@ -3104,14 +2208,7 @@ IQueryable<T>  -> Sorgu sağlayıcısına çevrilebilen LINQ
 ## Bölüm 4’ün ana fikri
 
 
-C#
-
-
-
-
-
-
-```
+```csharp
 var result = products
     .Where(product => product.Price > 1000)
     .OrderByDescending(product => product.Price)
@@ -3142,3 +2239,4 @@ Bu kod:
 
 
 Bölüm 4’ün teorik kısmı artık tamamlandı. Bundan sonra soruları **`IEnumerable` ve temel `Where`/`Select` işlemlerinden başlayarak** sırayla çözeceğiz.
+
