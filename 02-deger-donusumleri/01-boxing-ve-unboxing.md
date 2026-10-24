@@ -11,7 +11,7 @@
 **Hedef:** Değer türlerinin referans türlerine dönüştürülmesini ve güvenli
 biçimde geri alınmasını anlamak.
 
-## Boxing ve Unboxing
+## Boxing 
 
 **Boxing**, bir value type değerinin `object` veya interface türüne
 dönüştürülmesidir. Değer heap üzerinde bir nesneye sarılır.
