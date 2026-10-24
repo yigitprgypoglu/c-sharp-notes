@@ -1,151 +1,62 @@
-# c-sharp-notes
-new c# notes
+# C# Notları
 
-## C# Tip Sistemi
+C# öğrenirken tuttuğum konu anlatımlarını, örnek kodları ve alıştırmaları
+düzenli bir klasör yapısında bir araya getiren kişisel çalışma reposu.
 
-## İleri Seviye C# Öğrenme Programı
+## Öğrenme sırası
 
+Notlar, temel konulardan daha ileri konulara doğru bölüm bölüm ilerler.
 
-[01-tip-sistemi/README.md](01-tip-sistemi/README.md)
-1. **Modern C# temelleri ve tip sistemi**
+### 1. C# Tip Sistemi
 
+Value type, reference type, `struct`, `class`, `record`, `record struct`,
+değer eşitliği ve doğru tür seçimi.
 
+- [Bölüm 1 — C# Tip Sistemi](01-tip-sistemi/README.md)
+- [Bölüm 1 alıştırmaları](01-tip-sistemi/note_1_test.md)
 
-- Value type / reference type
+### 2. Değer Dönüşümleri ve Parametre Aktarımı
 
-- `struct`, `record`, `record struct`
+Boxing, unboxing, nullable türler, `ref`, `out` ve `in` parametreleri.
 
-- Nullable reference types
+- [Bölüm 2 — Değer Dönüşümleri ve Parametre Aktarımı](02-deger-donusumleri/README.md)
+- [Bölüm 2 alıştırmaları](02-deger-donusumleri/note_2_test.md)
 
-- Boxing ve unboxing
+### 3. Delegate, Event ve Expression
 
-- `ref`, `in`, `out`
+Delegate, `Func`, `Action`, `Predicate`, lambda ifadeleri, event'ler,
+özel event argümanları, abonelik yönetimi, expression tree ve `IQueryable`.
 
-[02-deger-donusumleri/README.md](02-deger-donusumleri/README.md)
-2. **Generics ve type constraints**
+- [Bölüm 3 — Delegate, Event ve Expression](03-delegate-event-expression/README.md)
+- [Bölüm 3 alıştırmaları](03-delegate-event-expression/note_3_test.md)
 
+### 4. İleri LINQ
 
+LINQ temelleri, sıralama ve sayfalama, koleksiyonları gruplama ve birleştirme,
+deferred execution, `IEnumerable`, `IQueryable`, extension metotları ve
+performans.
 
-- Generic sınıflar ve metotlar
+- [Bölüm 4 — İleri LINQ](04-ileri-linq/README.md)
 
-- `where` kısıtları
+## İleride eklenecek bölümler
 
-- Covariance ve contravariance
+Aşağıdaki başlıklar öğrenme planında yer alıyor ve ilerleyen süreçte
+klasörlere ayrılarak eklenecek:
 
-- Generic tasarım kalıpları
+5. Asenkron programlama
+6. Threading ve concurrency
+7. Bellek ve performans
+8. Reflection, attributes ve source generator
+9. Mimari ve tasarım
+10. Test, hata yönetimi ve production kodu
 
-[03-delegate-event-expression/README.md](03-delegate-event-expression/README.md)
-3. **Delegate, event ve expression**
+## İçerik yapısı
 
-[events](winforms-events.md)
+Her bölüm kendi klasöründe tutulur. Bölüm klasörlerinde:
 
-- Delegate çalışma mantığı
+- `README.md`: Bölüm içindeki derslerin ve konuların listesi
+- Numaralı `.md` dosyaları: Konu anlatımları ve örnek kodlar
+- `note_*_test.md`: Konuyla ilgili tekrar problemleri ve alıştırmalar
 
-- `Action`, `Func`, `Predicate`
-
-- Event tasarımı
-
-- Expression tree ve reflection
-
-[04-ileri-linq/README.md](04-ileri-linq/README.md)
-4. **LINQ’in ileri kullanımı**
-
-
-
-- Deferred execution
-
-- Iterator mantığı
-
-- `IEnumerable` ve `IQueryable`
-
-- Custom LINQ extension metotları
-
-[note_5.md](note_5.md)
-5. **Asenkron programlama**
-
-
-
-- `Task`, `ValueTask`
-
-- `async` / `await` internals
-
-- Cancellation token
-
-- Exception yönetimi
-
-- Async stream: `IAsyncEnumerable`
-
-[note_6.md](note_6.md)
-6. **Threading ve concurrency**
-
-
-
-- Race condition
-
-- Lock mekanizmaları
-
-- `SemaphoreSlim`
-
-- `ConcurrentDictionary`
-
-- Channels ve producer-consumer modeli
-
-[note_7.md](note_7.md)
-7. **Bellek ve performans**
-
-
-
-- Garbage Collector
-
-- Stack ve heap
-
-- `Span<T>` ve `Memory<T>`
-
-- Array pooling
-
-- Allocation azaltma
-
-- Benchmarking
-
-[note_8.md](note_8.md)
-8. **Reflection, attributes ve source generator**
-
-
-
-- Metadata okuma
-
-- Custom attribute
-
-- Runtime kod keşfi
-
-- Compile-time kod üretimi
-
-[note_9.md](note_9.md)
-9. **Mimari ve tasarım**
-
-
-
-- SOLID’in ileri uygulamaları
-
-- Dependency Injection
-
-- Clean Architecture
-
-- MediatR ve pipeline yaklaşımı
-
-- Domain-driven design temelleri
-
-[note_10.md](note_10.md)
-10. **Test, hata yönetimi ve production kodu**
-
-
-
-- Unit/integration test
-
-- Mocking
-
-- Result pattern
-
-- Logging
-
-- Resilience ve retry stratejileri
+Kod örnekleri C# kod blokları içinde, açıklamalar ise Markdown metni olarak
+düzenlenmiştir.
