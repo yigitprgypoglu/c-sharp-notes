@@ -1,3 +1,140 @@
+# 4.4 — Koleksiyonları Gruplama ve Birleştirme
+
+## 18. `Distinct`
+
+
+Tekrarlanan değerleri kaldırır:
+
+
+```csharp
+var numbers = new[] { 1, 2, 2, 3, 3, 3 };
+
+var distinctNumbers = numbers.Distinct();
+
+foreach (var number in distinctNumbers)
+{
+    Console.WriteLine(number);
+}
+
+```
+
+
+
+
+
+Çıktı:
+
+
+```text
+1
+2
+3
+
+```
+
+
+
+
+
+String değerlerde:
+
+
+```csharp
+var departments = new[]
+{
+    "IT",
+    "HR",
+    "IT",
+    "Finance",
+    "HR"
+};
+
+var uniqueDepartments = departments.Distinct();
+
+```
+
+## 19. `SelectMany`
+
+
+İç içe koleksiyonları tek koleksiyona dönüştürür.
+
+
+```csharp
+var classes = new[]
+{
+    new[] { "Ali", "Ayşe" },
+    new[] { "Mehmet", "Zeynep" }
+};
+
+var students = classes.SelectMany(classroom => classroom);
+
+```
+
+
+
+
+
+Sonuç:
+
+
+```text
+Ali
+Ayşe
+Mehmet
+Zeynep
+
+```
+
+
+
+
+
+`Select` kullansaydık iç içe koleksiyon elde ederdik:
+
+
+```csharp
+var nested = classes.Select(classroom => classroom);
+
+```
+
+
+
+
+
+`SelectMany`, koleksiyonları düzleştirir.
+
+
+Gerçek örnek:
+
+
+```csharp
+public record Order(int Id, List<string> Products);
+
+var orders = new[]
+{
+    new Order(1, new List<string> { "Mouse", "Keyboard" }),
+    new Order(2, new List<string> { "Monitor" })
+};
+
+var allProducts = orders
+    .SelectMany(order => order.Products);
+
+```
+
+
+
+
+
+Sonuç:
+
+
+```text
+Mouse
+Keyboard
+Monitor
+
+```
+
 ## 20. `GroupBy`
 
 
@@ -79,11 +216,6 @@ var employeeCounts = employees
 
 ```
 
-
-
-
-
-
 ## 21. `Join`
 
 
@@ -145,62 +277,3 @@ public record Order(int Id, int CustomerId, decimal Total);
 5. Birleştirilen sonucu oluşturacak fonksiyon
 
 ```
-
-
-
-
-
-
-## 22. Query syntax ve method syntax
-
-
-LINQ iki farklı biçimde yazılabilir.
-
-
-### Method syntax
-
-
-```csharp
-var result = numbers
-    .Where(number => number > 2)
-    .Select(number => number * 2);
-
-```
-
-
-
-
-
-### Query syntax
-
-
-```csharp
-var result =
-    from number in numbers
-    where number > 2
-    select number * 2;
-
-```
-
-
-
-
-
-İki kullanım da benzer sonucu üretir.
-
-
-Modern C# kodlarında method syntax daha yaygın görülür:
-
-
-```csharp
-var result = numbers
-    .Where(number => number > 2)
-    .Select(number => number * 2);
-
-```
-
-
-
-
-
-Query syntax özellikle `join` ve karmaşık sorgularda okunabilir olabilir.

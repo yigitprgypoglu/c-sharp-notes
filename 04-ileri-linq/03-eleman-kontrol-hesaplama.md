@@ -1,3 +1,5 @@
+# 4.3 — Eleman Bulma, Kontrol ve Hesaplama
+
 ## 12. `First`, `FirstOrDefault`
 
 
@@ -65,11 +67,6 @@ Product? product = products.FirstOrDefault(
     product => product.Price > 100000);
 
 ```
-
-
-
-
-
 
 ## 13. `Single`, `SingleOrDefault`
 
@@ -140,11 +137,6 @@ Single     -> Tam olarak bir eleman bekler.
 
 ```
 
-
-
-
-
-
 ## 14. `Any`
 
 
@@ -203,8 +195,6 @@ products.Count(product => product.Price > 10000) > 0
 
 Çünkü `Count` bütün elemanları kontrol etmek zorunda kalabilir; `Any` ilk uygun elemanda durabilir.
 
-
-
 ## 15. `All`
 
 
@@ -235,11 +225,6 @@ bool allEven = numbers.All(number => number % 2 == 0);
 Console.WriteLine(allEven); // False
 
 ```
-
-
-
-
-
 
 ## 16. `Count` ve `LongCount`
 
@@ -290,11 +275,6 @@ long count = numbers.LongCount();
 
 ```
 
-
-
-
-
-
 ## 17. `Sum`, `Min`, `Max`, `Average`
 
 
@@ -330,145 +310,3 @@ decimal lowestPrice = products.Min(product => product.Price);
 
 
 `Average()` dönüş tipi kaynağa göre değişebilir; `decimal` değerler için genellikle `decimal` döndürür.
-
-
-
-## 18. `Distinct`
-
-
-Tekrarlanan değerleri kaldırır:
-
-
-```csharp
-var numbers = new[] { 1, 2, 2, 3, 3, 3 };
-
-var distinctNumbers = numbers.Distinct();
-
-foreach (var number in distinctNumbers)
-{
-    Console.WriteLine(number);
-}
-
-```
-
-
-
-
-
-Çıktı:
-
-
-```text
-1
-2
-3
-
-```
-
-
-
-
-
-String değerlerde:
-
-
-```csharp
-var departments = new[]
-{
-    "IT",
-    "HR",
-    "IT",
-    "Finance",
-    "HR"
-};
-
-var uniqueDepartments = departments.Distinct();
-
-```
-
-
-
-
-
-
-## 19. `SelectMany`
-
-
-İç içe koleksiyonları tek koleksiyona dönüştürür.
-
-
-```csharp
-var classes = new[]
-{
-    new[] { "Ali", "Ayşe" },
-    new[] { "Mehmet", "Zeynep" }
-};
-
-var students = classes.SelectMany(classroom => classroom);
-
-```
-
-
-
-
-
-Sonuç:
-
-
-```text
-Ali
-Ayşe
-Mehmet
-Zeynep
-
-```
-
-
-
-
-
-`Select` kullansaydık iç içe koleksiyon elde ederdik:
-
-
-```csharp
-var nested = classes.Select(classroom => classroom);
-
-```
-
-
-
-
-
-`SelectMany`, koleksiyonları düzleştirir.
-
-
-Gerçek örnek:
-
-
-```csharp
-public record Order(int Id, List<string> Products);
-
-var orders = new[]
-{
-    new Order(1, new List<string> { "Mouse", "Keyboard" }),
-    new Order(2, new List<string> { "Monitor" })
-};
-
-var allProducts = orders
-    .SelectMany(order => order.Products);
-
-```
-
-
-
-
-
-Sonuç:
-
-
-```text
-Mouse
-Keyboard
-Monitor
-
-```
