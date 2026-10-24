@@ -37,7 +37,7 @@ new c# notes
 [note_3.md](note_3.md)
 3. **Delegate, event ve expression**
 
-
+[events](winforms-events.md)
 
 - Delegate çalışma mantığı
 
