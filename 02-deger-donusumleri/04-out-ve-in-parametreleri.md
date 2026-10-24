@@ -1,4 +1,4 @@
-# Bölüm 5 — `out` ve `in` Parametreleri
+# Bölüm 2.4 — `out` ve `in` Parametreleri
 
 ## Çıktı üretme ve salt okunur parametreler
 
