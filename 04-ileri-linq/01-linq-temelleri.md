@@ -1,3 +1,31 @@
+# 4.1 — LINQ Temelleri ve Veri Dönüştürme
+
+# Bölüm 4 — İleri LINQ
+
+
+LINQ, koleksiyonlar üzerinde filtreleme, dönüştürme, sıralama, gruplama ve sorgulama yapmamızı sağlayan bir yapıdır.
+
+
+LINQ’in temel amacı şudur:
+
+
+```text
+Koleksiyondaki veriyi nasıl işleyeceğimizi daha okunabilir ve zincirlenebilir şekilde yazmak.
+
+```
+
+
+
+
+
+Örnek veri:
+
+
+```csharp
+var numbers = new[] { 1, 2, 3, 4, 5, 6 };
+
+```
+
 ## 1. `IEnumerable<T>` nedir?
 
 
@@ -57,8 +85,6 @@ var evenNumbers = numbers.Where(number => number % 2 == 0);
 
 
 Burada `Where` sonucu genellikle yine `IEnumerable<int>` olur.
-
-
 
 ## 2. `Where` — Filtreleme
 
@@ -150,11 +176,6 @@ Sonuç:
 
 ```
 
-
-
-
-
-
 ## 3. `Select` — Dönüştürme
 
 
@@ -235,11 +256,6 @@ foreach (var name in productNames)
 public record Product(string Name, decimal Price);
 
 ```
-
-
-
-
-
 
 ## 4. `Where` ve `Select` birlikte
 

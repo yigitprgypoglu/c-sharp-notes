@@ -1,26 +1,13 @@
 # Bölüm 4 — İleri LINQ
 
-LINQ, koleksiyonlar üzerinde filtreleme, dönüştürme, sıralama, gruplama ve
-sorgulama yapmamızı sağlayan bir yapıdır.
+Bu bölüm, konuların öğrenme sırasına göre aşağıdaki başlıklara ayrılmıştır:
 
-LINQ'in temel amacı şudur:
-
-```text
-Koleksiyondaki veriyi nasıl işleyeceğimizi daha okunabilir ve zincirlenebilir
-şekilde yazmak.
-```
-
-Örnek veri:
-
-```csharp
-var numbers = new[] { 1, 2, 3, 4, 5, 6 };
-```
-
-LINQ konuları aşağıdaki başlıklara ayrılmıştır:
-
-1. [Temel LINQ](01-temel-linq.md)
-2. [Sıralama ve çalıştırma davranışı](02-siralama-ve-calistirma.md)
-3. [Eleman seçme ve hesaplama](03-eleman-ve-hesaplama.md)
-4. [Gruplama, Join ve sorgu syntax](04-gruplama-ve-sorgular.md)
-5. [IQueryable ve extension metotları](05-iqueryable-ve-extension.md)
-6. [Bölüm özeti](06-ozet.md)
+1. [4.1 — LINQ Temelleri ve Veri Dönüştürme](01-linq-temelleri.md)
+2. [4.2 — Sıralama ve Sayfalama](02-siralama-ve-sayfalama.md)
+3. [4.3 — Eleman Bulma, Kontrol ve Hesaplama](03-eleman-kontrol-hesaplama.md)
+4. [4.4 — Koleksiyonları Gruplama ve Birleştirme](04-gruplama-ve-birlestirme.md)
+5. [4.5 — Deferred Execution ve Iterator Mantığı](05-deferred-execution-ve-iterator.md)
+6. [4.6 — IEnumerable ve IQueryable](06-ienumerable-ve-iqueryable.md)
+7. [4.7 — Query Syntax, Method Syntax ve Extension Metotları](07-query-method-extension.md)
+8. [4.8 — Sorgu Akışı, Performans ve Yaygın Hatalar](08-sorgu-akisi-performans-hatalar.md)
+9. [Bölüm 4 Özeti](09-ozet.md)
