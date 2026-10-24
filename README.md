@@ -21,7 +21,7 @@ new c# notes
 
 - `ref`, `in`, `out`
 
-[note_2.md](note_2.md)
+[02-deger-donusumleri/README.md](02-deger-donusumleri/README.md)
 2. **Generics ve type constraints**
 
 
