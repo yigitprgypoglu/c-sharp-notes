@@ -1,4 +1,4 @@
-# Bölüm 9 — Expression Tree ve IQueryable
+# Bölüm 3.4 — Expression Tree ve IQueryable
 
 ## Kodun yapısını temsil etme ve sorgulama
 
