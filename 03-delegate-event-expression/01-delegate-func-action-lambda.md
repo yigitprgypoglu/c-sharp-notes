@@ -1,4 +1,4 @@
-# Bölüm 6 — Delegate, `Func`, `Action` ve Lambda İfadeleri
+# Bölüm 3.1 — Delegate, `Func`, `Action` ve Lambda İfadeleri
 
 ## Metotları değer gibi taşıma
 
