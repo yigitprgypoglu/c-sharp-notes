@@ -1,4 +1,4 @@
-# Bölüm 7 — Event ve Olay Tabanlı Programlama
+# Bölüm 3.2 — Event ve Olay Tabanlı Programlama
 
 ## Olaylara abone olma ve tepki verme
 
