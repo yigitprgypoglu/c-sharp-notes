@@ -1,4 +1,4 @@
-# Bölüm 8 — Event Args, Abonelik Yönetimi ve Pratik Kullanım
+# Bölüm 3.3 — Event Args, Abonelik Yönetimi ve Pratik Kullanım
 
 ## Olayları gerçek uygulamalarda yönetme
 
