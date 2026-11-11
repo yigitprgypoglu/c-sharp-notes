@@ -236,10 +236,11 @@ var orders = new[]
 };
 
 var result = customers.Join(
-    orders,
-    customer => customer.Id,
-    order => order.CustomerId,
-    (customer, order) => new
+    orders,        // 1. Hangi koleksiyonla birleştirilecek?
+    customer => customer.Id,        // 2. Ana tablodan (customers) hangi alana bakılacak?
+    order => order.CustomerId,        // 3. Birleşecek tablodan (orders) hangi alana bakılacak?
+    (customer, order) => new        // 4. Eşleşme olduğunda sonuç neye benzeyecek?
+);
     {
         CustomerName = customer.Name,
         OrderId = order.Id,
