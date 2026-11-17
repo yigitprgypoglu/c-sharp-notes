@@ -11,3 +11,7 @@ Bu bölüm, konuların öğrenme sırasına göre aşağıdaki başlıklara ayr�
 7. [4.7 — Query Syntax, Method Syntax ve Extension Metotları](07-query-method-extension.md)
 8. [4.8 — Sorgu Akışı, Performans ve Yaygın Hatalar](08-sorgu-akisi-performans-hatalar.md)
 9. [Bölüm 4 Özeti](09-ozet.md)
+
+## Alıştırmalar
+
+- [Bölüm 4 — İleri LINQ Tekrar Çalışması](bolum_4_test.md)
